@@ -1,13 +1,12 @@
-# ----------------------------------------
+```python
 # 🧹 PHASE 1: Data Cleaning and Preprocessing
-# ----------------------------------------
 
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 import matplotlib.pyplot as plt
 
-# ---------------- Load & Clean ZORI and ZHVI ----------------
+# Load & Clean ZORI and ZHVI
 zori_raw = pd.read_csv("/Users/matthewarucan/Desktop/ZORI.csv")
 zhvi_raw = pd.read_csv("/Users/matthewarucan/Desktop/ZHVI.csv")
 
@@ -27,7 +26,7 @@ zori_clean.to_csv("zori_clean_2016_2020.csv", index=False)
 zhvi_clean.to_csv("zhvi_clean_2016_2020.csv", index=False)
 print("✅ Saved ZORI and ZHVI cleaned datasets.")
 
-# ---------------- Load & Clean Listings ----------------
+# Load & Clean Listings
 listings = pd.read_csv("/Users/matthewarucan/Desktop/listings.csv")
 
 # Filter relevant columns and drop invalid listings
@@ -51,15 +50,12 @@ listings_with_zip = listings_with_zip[['id', 'latitude', 'longitude', 'zipcode',
 listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 
-# ----------------------------------------
-# 📊 PHASE 2:: DiD Analysis
-# ----------------------------------------
+# 📊 PHASE 2: Difference-in-Differences (DiD) Analysis
 
 # Step 1: Count listings per ZIP and group by intensity
 zip_counts = listings_with_zip['zipcode'].value_counts().reset_index()
 zip_counts.columns = ['zipcode', 'airbnb_listings']
 zip_counts['airbnb_group'] = pd.qcut(zip_counts['airbnb_listings'], q=3, labels=['Low', 'Medium', 'High'])
-
 
 # Step 2: Convert ZIP codes to string for join compatibility
 zori_clean['zipcode'] = zori_clean['zipcode'].astype(str)
@@ -98,9 +94,7 @@ print(zori_model.summary())
 print("\n=== DID RESULTS: Home Values ===")
 print(zhvi_model.summary())
 
-# ----------------------------------------
 # 📈 PHASE 3: Visualizations
-# ----------------------------------------
 
 # Rent Price Trends by Airbnb Group
 zori_plot = zori_long.groupby(['date', 'airbnb_group'])['rent_price'].mean().reset_index()
