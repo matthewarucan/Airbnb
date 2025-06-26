@@ -114,6 +114,8 @@ listings_with_zip = listings_with_zip[['id', 'latitude', 'longitude', 'zipcode',
 listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 ```
+---
+## 🧹 ANALYZE:
 
 ### 📊 Difference-in-Differences (DiD) Analysis
 ```python
@@ -196,3 +198,37 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+--
+## 🎬 ACT Phase: Interpret & Conclude
+
+### 🧾 Summary of Findings
+
+The goal of this analysis was to evaluate the impact of San Francisco’s **Airbnb regulations**, implemented on **January 1, 2018**, on **rent prices** and **home values**, particularly in ZIP codes with high Airbnb activity.
+
+---
+
+### 💸 Rent Prices — Observed Effects
+
+📉 **Rent prices in high-Airbnb ZIP codes remained relatively flat** after the 2018 policy, while **low-Airbnb areas saw continued growth until a COVID-era decline in 2020**.
+
+**Interpretation**:  
+The **Airbnb policy may have helped contain rent inflation** in high-activity areas by reducing short-term rental supply and keeping more housing stock available for long-term tenants.
+
+---
+
+### 🏠 Home Values — Observed Effects
+
+🏠 **Home values increased across all ZIP groups**, including those with high Airbnb activity.
+
+**Interpretation**:  
+Despite Airbnb restrictions, **property values did not decline**, likely due to overall market trends or other macroeconomic factors. This suggests the policy didn’t have a suppressive effect on long-term investment demand in these neighborhoods.
+
+---
+
+### ✅ Conclusion
+
+- **Rent prices** in high-Airbnb ZIPs were **stabilized post-policy**, suggesting the regulation was effective in **alleviating rental pressure**.
+- **Home values** did **not suffer**, indicating the policy didn't deter long-term ownership interest.
+- The **Difference-in-Differences (DiD)** approach provided evidence that **policy timing correlated with a shift in rent trends** in the most affected neighborhoods.
+
+This analysis supports the idea that **targeted short-term rental regulations** can help stabilize rents **without harming long-term housing market confidence**.
