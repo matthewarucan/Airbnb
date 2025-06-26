@@ -1,3 +1,5 @@
+![](/images/logo.png)
+
 # 🏠📉 San Francisco Airbnb Regulation Impact Analysis
 
 ## 🧾 TL;DR
