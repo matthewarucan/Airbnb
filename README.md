@@ -1,3 +1,68 @@
+## 📌 ASK Phase
+
+### 🧠 Guiding Question  
+What was the impact of **San Francisco’s 2018 Airbnb regulation**—specifically the *primary residence rule*—on **rent prices (ZORI)** and **home values (ZHVI)** across ZIP codes?
+
+### 🏛️ Background on the Regulation  
+In response to growing concerns about housing affordability, San Francisco introduced strict Airbnb regulations that went into full effect on **January 1, 2018**. Key elements of the regulation include:
+
+- **Primary Residence Requirement**: Hosts are only allowed to rent out properties that are their *primary residence*.
+- **90-Day Annual Cap**: Unhosted rentals (entire unit without the host present) are limited to **90 days per year**.
+- **Mandatory Registration**: All hosts must register with the city to legally operate short-term rentals.
+- **Platform Accountability**: Platforms like Airbnb must ensure all listings are registered and compliant with city regulations.
+
+These rules aimed to reduce the number of full-time short-term rentals that contribute to housing shortages and drive up prices in the city.
+
+### 🎯 Objective  
+Apply a **Difference-in-Differences (DiD)** model to determine if ZIP codes with **high Airbnb activity** experienced significant changes in:
+
+- **Rent Prices** (Zillow Observed Rent Index — ZORI)
+- **Home Values** (Zillow Home Value Index — ZHVI)
+
+---
+
+## 🧹 PREPARE Phase
+
+### 📁 Datasets Used
+
+| Dataset Name               | Description                                            | Source               |
+|---------------------------|--------------------------------------------------------|----------------------|
+| `ZORI.csv`                | Rent prices by ZIP code                                | Zillow Research      |
+| `ZHVI.csv`                | Home values by ZIP code                                | Zillow Research      |
+| `listings.csv`            | Airbnb listings with location, price, and availability | Inside Airbnb        |
+| `tl_2023_us_zcta520.shp`  | ZIP Code Tabulation Area shapefile for spatial join    | U.S. Census Bureau   |
+
+### ⚙️ Data Preparation Steps
+
+1. **Filter for ZIP-Level Data**  
+   - Retain only rows where `RegionType == 'zip'` in ZORI/ZHVI datasets.
+
+2. **Limit to Relevant Time Period**  
+   - Keep monthly columns from **January 2016 to December 2020**.
+
+3. **Clean Airbnb Listings**  
+   - Remove rows with missing coordinates or extreme values.
+   - Filter to active listings (`availability_365 > 30`) and `minimum_nights <= 30`.
+
+4. **Assign ZIP Codes via Spatial Join**  
+   - Convert listing coordinates to geometry points using `GeoPandas`.
+   - Spatially join listings with San Francisco ZIP boundaries using a shapefile.
+
+5. **Create Airbnb Intensity Groups**  
+   - Count Airbnb listings per ZIP.
+   - Group into quantiles: **Low**, **Medium**, and **High** Airbnb activity.
+
+6. **Reshape ZORI and ZHVI Data**  
+   - Transform from wide format (many monthly columns) to long format using `pd.melt`.
+
+7. **Create DiD Variables**  
+   - `treatment`: 1 if ZIP is in the **High Airbnb** group  
+   - `post_policy`: 1 if date is after **January 1, 2018**  
+   - `interaction`: `treatment * post_policy` — captures the causal effect
+
+---
+
+
 ## 🧹 PHASE 1: Data Cleaning and Preprocessing
 ```python
 import pandas as pd
@@ -94,6 +159,7 @@ print(zori_model.summary())
 print("\n=== DID RESULTS: Home Values ===")
 print(zhvi_model.summary())
 ```
+---
 
 ## 📈 PHASE 3: Visualizations
 ```python
