@@ -12,7 +12,7 @@ In January 2018, San Francisco implemented strict Airbnb regulations to reduce s
 - 🏠 **Home values remained strong**, suggesting no negative impact on property investment.
 
 ---
-## 📌 ASK Phase
+## ASK Phase
 
 ### 🧠 Guiding Question  
 What was the impact of **San Francisco’s 2018 Airbnb regulation**—specifically the *primary residence rule*—on **rent prices (ZORI)** and **home values (ZHVI)** across ZIP codes?
@@ -35,7 +35,7 @@ Apply a **Difference-in-Differences (DiD)** model to determine if ZIP codes with
 
 ---
 
-## 🔄 PREPARE Phase
+## PREPARE Phase
 
 ### 📁 Datasets Used
 
@@ -75,7 +75,7 @@ Apply a **Difference-in-Differences (DiD)** model to determine if ZIP codes with
    - `interaction`: `treatment * post_policy` — captures the causal effect
 
 ---
-## 🧹 PROCESS Phase: Data Cleaning and Preprocessing
+## PROCESS Phase: Data Cleaning and Preprocessing
 
 ### Data Cleaning and Preprocessing
 ```python
@@ -129,7 +129,7 @@ listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 ```
 ---
-## 📈 ANALYZE: Model and Evaluate
+## ANALYZE: Model and Evaluate
 
 ### 📊 Difference-in-Differences (DiD) Analysis
 ```python
@@ -176,7 +176,7 @@ print("\n=== DID RESULTS: Home Values ===")
 print(zhvi_model.summary())
 ```
 ---
-## 🧹 SHARE Phase: Visualizations
+## SHARE Phase: Visualizations
 
 ### Rent Price Trends by Airbnb Group
 
@@ -214,7 +214,7 @@ plt.show()
 ```
 
 ---
-## 🎬 ACT Phase: Interpret & Conclude
+## ACT Phase: Interpret & Conclude
 
 ### 🧾 Summary of Findings
 
