@@ -21,7 +21,7 @@ Apply a **Difference-in-Differences (DiD)** model to determine if ZIP codes with
 
 ---
 
-## 🧹 PREPARE Phase
+## 🔄 PREPARE Phase
 
 ### 📁 Datasets Used
 
@@ -61,9 +61,9 @@ Apply a **Difference-in-Differences (DiD)** model to determine if ZIP codes with
    - `interaction`: `treatment * post_policy` — captures the causal effect
 
 ---
+## 🧹 PROCESS Phase: Data Cleaning and Preprocessing
 
-
-## 🧹 PHASE 1: Data Cleaning and Preprocessing
+### Data Cleaning and Preprocessing
 ```python
 import pandas as pd
 import geopandas as gpd
@@ -115,7 +115,7 @@ listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 ```
 
-## 📊 PHASE 2: Difference-in-Differences (DiD) Analysis
+## 📊 Difference-in-Differences (DiD) Analysis
 ```python
 # Step 1: Count listings per ZIP and group by intensity
 zip_counts = listings_with_zip['zipcode'].value_counts().reset_index()
@@ -160,10 +160,11 @@ print("\n=== DID RESULTS: Home Values ===")
 print(zhvi_model.summary())
 ```
 ---
+## 🧹 SHARE Phase: Visualizations
 
-## 📈 PHASE 3: Visualizations
+### Rent Price Trends by Airbnb Group
+
 ```python
-# Rent Price Trends by Airbnb Group
 zori_plot = zori_long.groupby(['date', 'airbnb_group'])['rent_price'].mean().reset_index()
 plt.figure(figsize=(10, 6))
 for group in zori_plot['airbnb_group'].unique():
@@ -177,8 +178,10 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
+```
 # Home Value Trends by Airbnb Group
+
+```python
 zhvi_plot = zhvi_long.groupby(['date', 'airbnb_group'])['home_value'].mean().reset_index()
 plt.figure(figsize=(10, 6))
 for group in zhvi_plot['airbnb_group'].unique():
