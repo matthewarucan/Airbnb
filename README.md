@@ -115,7 +115,7 @@ listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 ```
 
-## 📊 Difference-in-Differences (DiD) Analysis
+### 📊 Difference-in-Differences (DiD) Analysis
 ```python
 # Step 1: Count listings per ZIP and group by intensity
 zip_counts = listings_with_zip['zipcode'].value_counts().reset_index()
