@@ -1,10 +1,4 @@
 # 🏠📉 San Francisco Airbnb Regulation Impact Analysis
-
-![Airbnb Policy](https://img.shields.io/badge/Focus-SF%20Airbnb%20Policy-blueviolet)  
-![Made with Python](https://img.shields.io/badge/Made%20with-Python-yellow?logo=python)  
-![Zillow Data](https://img.shields.io/badge/Data-Zillow%20%26%20Inside%20Airbnb-orange)  
-![DiD Analysis](https://img.shields.io/badge/Methodology-DiD%20Regression-brightgreen)
-
 ---
 
 ## 🧾 TL;DR
