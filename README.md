@@ -1,3 +1,22 @@
+# 🏠📉 San Francisco Airbnb Regulation Impact Analysis
+
+![Airbnb Policy](https://img.shields.io/badge/Focus-SF%20Airbnb%20Policy-blueviolet)  
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-yellow?logo=python)  
+![Zillow Data](https://img.shields.io/badge/Data-Zillow%20%26%20Inside%20Airbnb-orange)  
+![DiD Analysis](https://img.shields.io/badge/Methodology-DiD%20Regression-brightgreen)
+
+---
+
+## 🧾 TL;DR
+
+In January 2018, San Francisco implemented strict Airbnb regulations to reduce short-term rentals and improve housing availability. This project uses a **Difference-in-Differences (DiD)** model to assess whether those regulations stabilized **rent prices** and impacted **home values** in ZIP codes with high Airbnb activity.
+
+**Key Takeaways:**
+
+- 📉 **Rent growth slowed** in high-Airbnb ZIPs post-policy.
+- 🏠 **Home values remained strong**, suggesting no negative impact on property investment.
+
+---
 ## 📌 ASK Phase
 
 ### 🧠 Guiding Question  
@@ -115,7 +134,7 @@ listings_with_zip.to_csv("listings_with_zip.csv", index=False)
 print("✅ Saved listings with ZIP codes.")
 ```
 ---
-## 🧹 ANALYZE:
+## 📈 ANALYZE: Model and Evaluate
 
 ### 📊 Difference-in-Differences (DiD) Analysis
 ```python
@@ -181,7 +200,7 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-# Home Value Trends by Airbnb Group
+### Home Value Trends by Airbnb Group
 
 ```python
 zhvi_plot = zhvi_long.groupby(['date', 'airbnb_group'])['home_value'].mean().reset_index()
