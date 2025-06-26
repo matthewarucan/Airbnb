@@ -1,8 +1,8 @@
 ![](/images/logo.png)
 
-# 🏠📉 San Francisco Airbnb Regulation Impact Analysis
+# San Francisco Airbnb Regulation Impact Analysis
 
-## 🧾 TL;DR
+## TL;DR
 
 In January 2018, San Francisco implemented strict Airbnb regulations to reduce short-term rentals and improve housing availability. This project uses a **Difference-in-Differences (DiD)** model to assess whether those regulations stabilized **rent prices** and impacted **home values** in ZIP codes with high Airbnb activity.
 
