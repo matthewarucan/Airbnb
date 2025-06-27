@@ -233,26 +233,26 @@ The goal of this analysis was to evaluate the impact of San Francisco’s **Airb
 
 ### 💸 Rent Prices — Observed Effects
 
-📉 **Rent prices in high-Airbnb ZIP codes remained relatively flat** after the 2018 policy, while **low-Airbnb areas saw continued growth until a COVID-era decline in 2020**.
+📉 **Rent prices in high-Airbnb ZIP codes remained relatively flat**, while **low- and medium-Airbnb ZIPs continued to increase modestly until a COVID-related decline in 2020**.
 
-**Interpretation**:  
-The **Airbnb policy may have helped contain rent inflation** in high-activity areas by reducing short-term rental supply and keeping more housing stock available for long-term tenants.
+**Interpretation**  
+The **Airbnb policy may have helped contain rent inflation** in high-activity neighborhoods by limiting short-term rental conversions and increasing long-term rental supply. However, broader market forces — including the pandemic — likely influenced citywide trends in 2020.
 
 ---
 
 ### 🏠 Home Values — Observed Effects
 
-🏠 **Home values increased across all ZIP groups**, including those with high Airbnb activity.
+🏠 **Home values steadily increased across all ZIP groups**, with **no significant drop** in high-Airbnb areas following the 2018 regulation.
 
-**Interpretation**:  
-Despite Airbnb restrictions, **property values did not decline**, likely due to overall market trends or other macroeconomic factors. This suggests the policy didn’t have a suppressive effect on long-term investment demand in these neighborhoods.
+**Interpretation**  
+Despite Airbnb restrictions, **property values continued to appreciate**, suggesting sustained demand for homeownership. This implies the regulation **did not dampen long-term investment confidence**, and may have had limited effect on owner-occupied value dynamics.
 
 ---
 
 ### ✅ Conclusion
 
-- **Rent prices** in high-Airbnb ZIPs were **stabilized post-policy**, suggesting the regulation was effective in **alleviating rental pressure**.
-- **Home values** did **not suffer**, indicating the policy didn't deter long-term ownership interest.
-- The **Difference-in-Differences (DiD)** approach provided evidence that **policy timing correlated with a shift in rent trends** in the most affected neighborhoods.
+- **Rent prices** in high-Airbnb ZIPs showed signs of **post-policy stabilization**, while other areas continued to climb slightly before COVID-19 impacts.
+- **Home values** remained strong across all groups, indicating the regulation did **not deter investment or reduce property demand**.
+- The **Difference-in-Differences (DiD)** approach revealed a **moderation in rent trends** post-policy in the most Airbnb-affected neighborhoods.
 
-This analysis supports the idea that **targeted short-term rental regulations** can help stabilize rents **without harming long-term housing market confidence**.
+This suggests that **targeted short-term rental regulations** may help **alleviate rental pressures** without negatively affecting the **long-term housing market**.
