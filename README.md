@@ -204,7 +204,7 @@ plt.show()
 ```
 ### Home Value Trends by Airbnb Group
 
-![](images/homevalue.png)
+![](images/homevalue_v2.png)
 
 ```python
 zhvi_plot = zhvi_long.groupby(['date', 'airbnb_group'])['home_value'].mean().reset_index()
