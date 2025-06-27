@@ -92,6 +92,11 @@ zhvi_raw = pd.read_csv("/Users/matthewarucan/Desktop/ZHVI.csv")
 zori_zip = zori_raw[zori_raw['RegionType'] == 'zip'].copy()
 zhvi_zip = zhvi_raw[zhvi_raw['RegionType'] == 'zip'].copy()
 
+# Filter to San Francisco ZIPs only
+sf_zips = zori_zip[zori_zip['RegionName'].astype(str).str.startswith('941')]['RegionName'].unique()
+zori_zip = zori_zip[zori_zip['RegionName'].isin(sf_zips)]
+zhvi_zip = zhvi_zip[zhvi_zip['RegionName'].isin(sf_zips)]
+
 # Identify date columns in desired range
 date_columns = [col for col in zori_zip.columns if '2016-01-31' <= col <= '2020-12-31']
 
