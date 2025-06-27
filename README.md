@@ -180,6 +180,8 @@ print(zhvi_model.summary())
 
 ### Rent Price Trends by Airbnb Group
 
+![](images/rentprice.png)
+
 ```python
 zori_plot = zori_long.groupby(['date', 'airbnb_group'])['rent_price'].mean().reset_index()
 plt.figure(figsize=(10, 6))
@@ -196,6 +198,8 @@ plt.tight_layout()
 plt.show()
 ```
 ### Home Value Trends by Airbnb Group
+
+![](images/homevalue.png)
 
 ```python
 zhvi_plot = zhvi_long.groupby(['date', 'airbnb_group'])['home_value'].mean().reset_index()
